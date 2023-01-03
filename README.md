@@ -3,7 +3,7 @@
 ## Morphing Images
 Create morphing between images
 ### Download
-- [ ] [Morphing Images v2.0](https://github.com/3DMish/m7a-addons/raw/main/morphing-images/m7a_morph_v2.py?inline=false)
+- [ ] [Morphing Images v2.0]([https://github.com/3DMish/m7a-addons/releases/download/MorphingImages/m7a_morph_v2.py)
 - [ ] [OLD] [~~3DM Morph v0.1.5~~](https://github.com/3DMish/m7a-addons/raw/main/morphing-images/old_versions/3dm_morph.py?inline=false)
 
 <details><summary>ScreenShots</summary>
