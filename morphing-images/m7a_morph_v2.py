@@ -785,8 +785,8 @@ class m7a_morph_remove_line(operator):
 
 class m7a_morph_show_selected(operator):
     bl_idname       = '3dmish.morph_show_selected'
-    bl_label        = 'Show Selected Point'
-    bl_description  = 'Show Selected Point'
+    bl_label        = 'Activate Point'
+    bl_description  = 'Activate Selected Point'
 
     def execute(self, context):
         colored_points();
@@ -994,13 +994,14 @@ class m7a_morph_btn(operator):
             name = selected.name.split(".");
             num = int(name[2]) + int(self.bl_opt);
             bone_name = name[0] + "." + name[1] + "." + str(num);
-            self.report({'INFO'}, "Select next point: " + str(bone_name));
-            try:
+            if (bone_name in morph_armature.pose.bones):
+                self.report({'INFO'}, "Select next point: " + str(bone_name));
                 bpy.ops.pose.select_all(action='DESELECT');
                 #morph_armature.pose.bones.active = morph_armature.bones[bone_name].bone;
                 morph_armature.pose.bones[bone_name].bone.select = True;
                 bpy.ops.view3d.view_selected(use_all_regions=False);
-            except: pass
+            
+                for i in range(0, 23): bpy.ops.view3d.zoom(delta=-1);
             
         elif (self.bl_btn == "jump_to_back"):
             pass
